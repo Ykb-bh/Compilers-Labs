@@ -1,0 +1,24 @@
+let	 
+	function read_unsigned() : int =
+	/*.................*/
+		let	
+			var ret  : int    := 0
+			var element       := 1
+			var char : string  := ""
+ 		in
+			char := getchar();
+			if (char="\n") then element:=0;
+			while char <> "\n" do 
+				if ord(char) >= ord("0") & ord(char) <= ord("9") then
+				(ret:=ret*10+ord(char)-48; char:=getchar())
+				else
+					(ret:=-1; break);
+			if (element=0) then ret:=-1;
+			ret
+		end
+	/*.................*/
+	var a : int := read_unsigned() 
+in
+	print_int(a*2); 
+	print("\n")
+end
